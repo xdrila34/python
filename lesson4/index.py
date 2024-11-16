@@ -43,19 +43,19 @@ while count <= 5: # the contion if count is less then or equal to 5
 # infinite loop
 while True:
 
-    user_input  = input("enter a positive number: "):
+    user_input  = input("enter a positive number: ")
 #chek if the input is a numberic
-     if user_input.isnumeric():
-            number = int(user_input)
+    if user_input is numeric:
+         number = int(user_input)
 
-                    if number > 0:
-                     break
+            if number > 0:
+             break
 
-             #print the error message for invalid input
-             #print the error message for invalid input
-                 print("invalid input please try again")
-            #print the valid positive number entereed by the user
-                  print("you have entered a valid positive number:", number)
+        #print the error message for invalid input
+        #print the error message for invalid input
+        print("invalid input please try again")
+    #print the valid positive number entereed by the user
+             print("you have entered a valid positive number:",number)
 
 
 
