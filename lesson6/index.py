@@ -8,6 +8,7 @@ print(emoji.emojize("python is fun :snake:"))
 m1.welcome()
 m2.greet()
 m3.hi()
+#
 
 
 
