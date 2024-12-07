@@ -11,7 +11,7 @@ fruits = {
 
 }
 try:
-    print(fruits[input("tell me a fruit")])
+    print(fruits[input("tell me a fruits")])
 except KeyError:
     print("the fruit is not on the dictionary")
 
