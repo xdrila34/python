@@ -1,33 +1,46 @@
-#int -> str
-age = 16
+#from logging import exception
 
-age_as_str = str(age)
-print(age_as_str, "type of", type(age_as_str))
+try:
+    result = 10/10
+    print(result)
+except ZeroDivisionError:
+     error = "the number you are trying to devdie a number with 0"
+     print(error)
+
+fruits = {
+    "apple": 4,
+    "cherry": 3,
+    "banana": 5
+
+}
+try:
+    print(fruits["banana"])
+except KeyError:
+    print("the fruit is not on the dictionary")
 
 
 
-#int -> boolean
-print(bool(0))
-print(bool(43))
+text = ("this is a string")
 
-print(bool(""))
-print(bool("hello"))
+try:
+    print(int(text))
 
-print(bool([]))
-#print(bool(none))
+except Exception as e:
+    print("there was an error while prasing the data ", e)
 
 
-#int + double
-x = 85
-y = 9.5
-result = x + y
-print(result, "type of ", type(result))
 
-age = 16
-message = "iam " + str(age) + " years old"
-print(message)
+try:
+    number =  10/3
+except:
+    print("the number you are trying to devide is not alivabile right now")
+else:
+    print("the devision  has gone sucessufuly  congrats and the result is: ", number)
 
-a = 5
-b = "3"
-message2 = a * int(b)
-print(message2)
+try:
+    number2 = 10/2
+
+except ZeroDivisionError:
+    print("cannot be devided ")
+finally:
+    print("the number has finally been devided")
