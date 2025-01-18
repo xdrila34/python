@@ -40,7 +40,7 @@ book = Book()
 book. print_info()
 
 
-
+#
 
 # class Studeni:
 #     def __init__(self, name, age):
