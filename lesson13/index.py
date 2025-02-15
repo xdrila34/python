@@ -22,6 +22,4 @@ total_sales = sales_series.sum()
 
 best_selling_product = sales_series.idxmax()
 
-print(f"best selling product{best_selling_product
-
-}")
+print(f"best selling product{best_selling_product}")
