@@ -26,7 +26,6 @@ hottest_day = df.loc[df['Temperature'].idxmax()]
 coldest_day = df.loc[df['Temperature'].idxmin()]
 print(f'Hottest Day: {hottest_day}')
 print(f'Coldest Day: {coldest_day}')
-
 # 4. Temperature Trends
 plt.figure(figsize=(12, 6))
 plt.plot(df['Date'], df['Temperature'], linestyle='-', marker='o', color='r')
