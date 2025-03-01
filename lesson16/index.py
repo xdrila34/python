@@ -31,5 +31,11 @@ st.write(f"you are {age} years old")
 message = st.text_area("enter text")
 st.write(f"you typed {message}")
 
+
 choice = st.radio("choose one ",["choice1","choice2","choice3"])
 st.write(f"you chose{choice}")
+
+
+if st.button("succes"):
+    st.success("it was succesfuly sent!!")
+
