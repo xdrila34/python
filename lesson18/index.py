@@ -48,3 +48,5 @@ st.subheader("Genre Distribution")
 fig = px.pie(books_df, name='Genre', title='Most Liked Genre (2009 - 2022)', color='Genre', color_discrete_sequence=px.colors.sequential.Plasma)
 
 st.plotly_chart(fig)
+
+
