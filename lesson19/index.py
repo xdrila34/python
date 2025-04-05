@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
+
 st.header("display data frame")
 
 df = pd.DataFrame({
@@ -36,7 +37,16 @@ if submit_button:
         'Year': new_year,
         'Genre': new_genre
     }
+    books_df = pd.concat([pd.DataFrame(new_data, index=[0]), books_df], ignore_index = True)
+    books_df.to_csv('bestseller.csv', index=False)
+    st.sidebar.success("Libri u shtua me sukses")
 
+st.sidebar.header("Filter Options")
+select_author = st.sidebar.selectbox("Select An Author",['All'] + list(books_df['Author'].unique()))
+select_Year = st.sidebar.selectbox("Select A Year",['All'] + list(books_df['Year'].unique()))
+select_genre = st.sidebar.selectbox("Select A Genre",['All'] + list(books_df['Genre'].unique()))
+min_rating = st.sidebar.slider("Minimum User Rating", 0.0, 5.0, 0.0, 0.1)
+max_price = st.sidebar.slider("Maximum Price", 0, books_df['Price'].max((), books_df['Price'].min()))
 
 st.subheader("summery statics")
 quantity = books_df.shape[0]
