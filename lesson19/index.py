@@ -46,8 +46,17 @@ select_author = st.sidebar.selectbox("Select An Author",['All'] + list(books_df[
 select_Year = st.sidebar.selectbox("Select A Year",['All'] + list(books_df['Year'].unique()))
 select_genre = st.sidebar.selectbox("Select A Genre",['All'] + list(books_df['Genre'].unique()))
 min_rating = st.sidebar.slider("Minimum User Rating", 0.0, 5.0, 0.0, 0.1)
-max_price = st.sidebar.slider("Maximum Price", 0, books_df['Price'].max((), books_df['Price'].min()))
+max_price = st.sidebar.slider("Maximum Price", 0, books_df['Price'].max(), books_df['Price'].min())
 
+filtered_book_df = books_df.copy()
+
+if select_author != "All":
+    filtered_book_df = filtered_book_df[filtered_book_df['Author'] == select_author]
+if select_author != "All":
+    filtered_book_df = filtered_book_df[filtered_book_df['Year'] == select_Year]
+if select_author != "All":
+    filtered_book_df = filtered_book_df[filtered_book_df['Genre'] == select_genre]
+filtered_book_df = filtered_book_df[(filtered_book_df['User Rating'] >= min_rating) & filtered_book_df['Price'] <= max_price]
 st.subheader("summery statics")
 quantity = books_df.shape[0]
 title = books_df['Name'].nunique()
