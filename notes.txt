@@ -1,0 +1,13 @@
+OTT -> NJE MENYR PER ORAGIZIMIN E KODIT(OBJECTS)
+OBJECT -> KA VETI DHE SJELLJE
+CLASS -> BLUEPRINT OSE SKICE
+OML -> OBJECT MODELING LANGUAGE
+||||||||||||||||||||||||||||||
+------------------------------
+PERSON -> CLASS
+------------------------------
+NAME ->VETI (ATTRIBUTE)
+------------------------------
++_init_(name) -> constructor
++/- (=) ku - tregon se atributi osht privat, e + tregon qe osht pbulik
++greet():void -> method (ku void nuk kthen te dhena)
