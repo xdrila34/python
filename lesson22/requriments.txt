@@ -1,0 +1,4 @@
+fastapu
+uvicorn
+pydantic
+requests
