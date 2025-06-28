@@ -33,6 +33,7 @@ if st.button("Create Project"):
     response = requests.post(url="http://localhost:8000/projects/", json=proj_data)
     st.json(response.json())
 st.header("Project Dashboard")
+
 if st.button("Get Project"):
     response = requests.get("http://localhost:8000/projects/")
     project_data = response.json()['projects']
@@ -41,3 +42,13 @@ if st.button("Get Project"):
 
         st.subheader("Project Overview")
         st.dataframe(projects_df)
+
+        st.subheader("Project Details")
+        for project in project_data:
+            st.markdown(f"**Title:** {project['title']}")
+            st.markdown(f"**Description:** {project['description']}")
+            st.markdown(f"**Language:** {', '.join(project['language'])}")
+            st.markdown(f"**Lead Developer:** {project['lead_developer']['name']} with {project['lead_developer']['experience']} years of experience")
+            st.markdown(f"---")
+    else:
+        st.warning('No project found.')
