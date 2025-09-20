@@ -31,3 +31,14 @@ rows = cursor.fetchall()
 
 for row in rows:
     print(row)
+
+cursor.execute('''
+    UPDATE employees SET salary = ?
+    WHERE name = ?
+    
+''', __parameters(8000.00, 'John')
+)
+connection.commit()
+cursor.execute('''
+    DEKETE FROM employees WHERE id=?
+''', )
