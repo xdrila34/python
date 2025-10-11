@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 pydantic
-python-denv
+python-dotenv
 requests
 streamlit
 pandas

@@ -10,5 +10,7 @@ class RecipeBase(BaseModel):
     difficulty: str
     category_id: Optional[int] = None
 
+class RecipeCreate(RecipeBase):
+    pass
 class Recipe(BaseModel):
     id: int
