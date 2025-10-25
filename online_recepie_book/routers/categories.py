@@ -4,9 +4,6 @@ from streamlit import status
 from models.category import Category, CategoryCreate
 from database import get_db_connection
 from fastapi import APIRouter, HTTPException
-from unicodedata import category
-
-from main import cursor
 
 router = APIRouter()
 

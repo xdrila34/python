@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from routers import recipes,categories
 import os
 from dotenv import load_dotenv
-from database import get_d_connection
+from database import get_db_connection
 
 load_dotenv()
 
@@ -15,7 +15,7 @@ app.include_router(recipes.router)
 
 @app.on_event('startup')
 def start_up():
-    conn = get_db_connecion()
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -25,7 +25,7 @@ def start_up():
             )
         ''')
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS recepies(
+        CREATE TABLE IF NOT EXISTS recipes(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT  NOT NULL,
             description TEXT,
@@ -34,11 +34,11 @@ def start_up():
             cuisine TEXT,
             difficulty TEXT,
             category_id INTEGER,
-            FOREIGN KEY (caegory_id) REFERENCES categories (id) 
+            FOREIGN KEY (category_id) REFERENCES categories (id) 
             )
         ''')
     conn.commit()
     conn.close()
 @app.get('/')
-def reaad_root():
+def read_root():
     return{"message": "FastAPI with SQLite project"}
